@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saman Sathyan | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #e5e7eb;
+}
+
+/* MAIN LAYOUT */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    background: #020617;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h2 {
+    color: #38bdf8;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.nav-btn {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #cbd5f5;
+    transition: 0.3s;
+}
+
+.nav-btn:hover,
+.nav-btn.active {
+    background: #1e293b;
+    color: #38bdf8;
+}
+
+/* CONTENT */
+.content {
+    flex: 1;
+    padding: 50px;
+    overflow-y: auto;
+}
+
+.section {
+    display: none;
+    animation: fade 0.5s ease;
+}
+
+.section.active {
+    display: block;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+h3 {
+    color: #38bdf8;
+    margin-bottom: 8px;
+}
+
+p {
+    line-height: 1.8;
+    max-width: 800px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background: #020617;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+/* LIST */
+ul {
+    list-style: none;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+/* ANIMATION */
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+    }
+    .nav-btn {
+        white-space: nowrap;
+        margin-right: 10px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2>PROFILE</h2>
+        <div class="nav-btn active" onclick="showSection('home')">Home</div>
+        <div class="nav-btn" onclick="showSection('about')">About</div>
+        <div class="nav-btn" onclick="showSection('education')">Education</div>
+        <div class="nav-btn" onclick="showSection('skills')">Skills</div>
+        <div class="nav-btn" onclick="showSection('interests')">Interests</div>
+        <div class="nav-btn" onclick="showSection('contact')">Contact</div>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- HOME -->
+        <div id="home" class="section active">
+            <h1>SAMAN SATHYAN.S</h1>
+            <p>
+                Artificial Intelligence & Data Science undergraduate with a strong interest
+                in programming, data analysis, and emerging technologies. Focused on
+                continuous learning and skill development.
+            </p>
+        </div>
+
+        <!-- ABOUT -->
+        <div id="about" class="section">
+            <h1>About Me</h1>
+            <p>
+                I am currently pursuing Artificial Intelligence and Data Science at
+                Bannari Amman Institute of Technology. I am building a solid foundation
+                in Python, SQL, and core programming concepts while improving analytical
+                and problem-solving skills through consistent practice.
+            </p>
+        </div>
+
+        <!-- EDUCATION -->
+        <div id="education" class="section">
+            <h1>Education</h1>
+            <div class="cards">
+                <div class="card">
+                    <h3>B.Tech – AI & DS</h3>
+                    <p>Bannari Amman Institute of Technology</p>
+                    <p>2024 – 2028</p>
+                    <p>CGPA: 7.09</p>
+                </div>
+                <div class="card">
+                    <h3>HSC</h3>
+                    <p>85%</p>
+                </div>
+                <div class="card">
+                    <h3>SSLC</h3>
+                    <p>87.4%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SKILLS -->
+        <div id="skills" class="section">
+            <h1>Skills</h1>
+            <div class="cards">
+                <div class="card">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python (Beginner)</li>
+                        <li>C (Beginner)</li>
+                        <li>C++ (Beginner)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Database</h3>
+                    <ul>
+                        <li>SQL (Beginner)</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Time Management</li>
+                        <li>Adaptability</li>
+                        <li>Teamwork</li>
+                        <li>Decision Making</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- INTERESTS -->
+        <div id="interests" class="section">
+            <h1>Interested in</h1>
+            <div class="cards">
+                <div class="card">Data Analysis</div>
+                <div class="card">Artificial Intelligence</div>
+                <div class="card">Web Technologies</div>
+                <div class="card">Robotics</div>
+                <div class="card">Machine Learning</div>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div id="contact" class="section">
+            <h1>Contact</h1>
+            <p>📞 +91 8838859571</p>
+            <p>📧 samansathyans.ad24@bitsathy.ac.in</p>
+            <p>📧 samansathyan94@gmail.com</p>
+            <p>
+                🔗 <a href="https://www.linkedin.com/in/saman-sathyan-s-380648336"
+                      target="_blank"
+                      style="color:#38bdf8;">
+                    LinkedIn Profile
+                </a>
+            </p>
+            <p>📍 Coimbatore, Tamil Nadu, India</p>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function showSection(id) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+
+    document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+}
+</script>
+
+</body>
+</html>
